@@ -45,6 +45,8 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(email);
+    console.log(password);
 
     const user = await User.findOne({ email });
 
@@ -59,7 +61,7 @@ const loginUser = async (req, res) => {
       res.status(401).json({ message: "Invalid email or password" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error" , error});
   }
 };
 
