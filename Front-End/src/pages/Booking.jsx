@@ -36,7 +36,7 @@ const Booking = () => {
   useEffect(() => {
     const fetchHotelData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/hotels/${id}`);
+        const response = await axios.get(`https://hotel-booking-w6im.onrender.com/api/hotels/${id}`);
         setHotel(response.data);
       } catch (error) {
         console.error("Error fetching hotel data:", error);
@@ -69,7 +69,7 @@ const Booking = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/booking",
+        "https://hotel-booking-w6im.onrender.com/api/booking",
         {
           hotelId: id,
           checkInDate: dates.checkIn,

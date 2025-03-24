@@ -11,7 +11,7 @@ const Hotel = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/hotels");
+        const response = await fetch("https://hotel-booking-w6im.onrender.com/api/hotels");
         if (!response.ok) throw new Error("Failed to fetch hotels");
         const data = await response.json();
         setHotels(data);

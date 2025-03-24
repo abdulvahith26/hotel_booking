@@ -36,7 +36,7 @@ const Payment = () => {
   const handlePayment = async () => {
     try {
       const { data: order } = await axios.post(
-        "http://localhost:5000/api/payment/order",
+        "https://hotel-booking-w6im.onrender.com/api/payment/order",
         { amount: totalAmount, currency: "INR" }
       );
 
@@ -127,7 +127,8 @@ const Payment = () => {
                   localStorage.clear();
                   sessionStorage.clear();
                    window.location.reload();
-                  navigate("/login");
+                  navigate("/login", { replace: true });
+                  window.location.reload();
                 }}
                 className="bg-red-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-red-700 transition w- "
               >
